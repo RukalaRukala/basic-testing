@@ -22,7 +22,7 @@ describe('throttledGetDataFromApi', () => {
     const data = jest.spyOn(axios.Axios.prototype, 'get');
     await throttledGetDataFromApi('/posts/1');
     jest.runAllTimers();
-    expect(data).toBeCalledWith('/posts/1');
+    expect(data).toHaveBeenCalledWith('/posts/1');
   });
 
   test('should return response data', async () => {
