@@ -8,7 +8,7 @@ describe('throttledGetDataFromApi', () => {
 
   afterAll(() => {
     jest.useRealTimers();
-    jest.clearAllMocks()
+    jest.clearAllMocks();
   });
 
   test('should create instance with provided base url', async () => {

@@ -3,7 +3,7 @@ import {
   throwError,
   throwCustomError,
   rejectCustomError,
-  MyAwesomeError
+  MyAwesomeError,
 } from './index';
 
 describe('resolveValue', () => {

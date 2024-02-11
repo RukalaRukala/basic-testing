@@ -1,10 +1,10 @@
 import {
   doStuffByInterval,
   doStuffByTimeout,
-  readFileAsynchronously
+  readFileAsynchronously,
 } from './index';
-import fs from "fs";
-import fsAsync from "fs/promises";
+import fs from 'fs';
+import fsAsync from 'fs/promises';
 import path from 'path';
 
 describe('doStuffByTimeout', () => {
@@ -68,7 +68,7 @@ describe('doStuffByInterval', () => {
 describe('readFileAsynchronously', () => {
   test('should call join with pathToFile', async () => {
     const pathToFile = './index.ts';
-    jest.spyOn(path, 'join')
+    jest.spyOn(path, 'join');
     await readFileAsynchronously(pathToFile);
     expect(path.join).toHaveBeenCalledWith(__dirname, pathToFile);
   });
@@ -80,8 +80,9 @@ describe('readFileAsynchronously', () => {
 
   test('should return file content if file exists', async () => {
     jest.spyOn(fs, 'existsSync').mockReturnValue(true);
-    jest.spyOn(fsAsync, 'readFile')
-        .mockReturnValue(Promise.resolve('Mock content'));
+    jest
+      .spyOn(fsAsync, 'readFile')
+      .mockReturnValue(Promise.resolve('Mock content'));
 
     const result = await readFileAsynchronously('./index');
 
